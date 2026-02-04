@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Montserrat, Antic_Didone } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
+import Footer from "../components/footer";
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 
 
 const montserrat = Montserrat({
@@ -32,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} ${anticdidone.variable} antialiased`} >
         <Header />
+        <Footer />
         {children}
       </body>
     </html>
