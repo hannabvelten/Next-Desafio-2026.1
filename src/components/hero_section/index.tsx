@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function HeroSection() {
     return(
-        <div className="imagem w-full h-150 relative justify-end">
+        <div className="imagem w-fullh-150 relative justify-end">
             <Link href='/'>
                 <Image 
                 src={'/imagens/colarHero.jpeg'}
