@@ -21,9 +21,5 @@ export default function HeroSection() {
             </h1>
         </div>
         
-          // <h1 className="absolute ">Sua</h1>
-        // <h1 className="absolute">essencia</h1>
-        // <h1 className="absolute">, em forma de</h1>
-        // <h1 className="absolute">joia</h1>
     )
 }
