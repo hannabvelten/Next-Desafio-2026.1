@@ -14,7 +14,7 @@ export default function Header(){
     const [isNavOpen, setIsNavOpen] = useState(false)
 
     return (
-        <header className="bg-[#0F1C53] sticky top-0 z-20 w-ful px-6 md:px-15 flex flex-col ">
+        <header className="bg-[#0F1C53] sticky top-0 z-20 w-ful px-6 md:px-15 flex flex-col md:flex-row md:items-center">
             <div className="flex">
                 <button className="icone text-white text-2xl md:hidden text-start" onClick={() => setIsNavOpen(!isNavOpen)}>
                     <i className="bi bi-list"></i>
@@ -42,7 +42,7 @@ export default function Header(){
                 </div>
             ) : null}
 
-            <div className="hidden md:flex flex-1 gap-14 w-full h-full text-[#FFFFFF] font-medium items-center">
+            <div className="hidden md:flex flex-1 gap-14 w-full h-full text-[#FFFFFF] font-medium items-center md:justify-end">
                 <Link href="/" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Home</Link>
                 <Link href="/produtos" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Produtos</Link>
                 <Link href="/contato" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Contato</Link>
