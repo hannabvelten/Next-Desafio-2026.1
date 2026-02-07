@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function HeroSection() {
     return(
-        <div className="imagem w-fullh-150 relative justify-end">
+        <div className="imagem w-full h-40 md:h-150 relative justify-end">
             <Link href='/'>
                 <Image 
                 src={'/imagens/colarHero.jpeg'}
@@ -12,7 +12,7 @@ export default function HeroSection() {
                 className="object-cover object-[center_82%]"
                 />
             </Link>
-            <h1 className="texto absolute w-full h-full text-azulEscuro font-anticdidone flex-col text-[70px] text-end justify-end items-end inset-0 px-45 py-80">
+            <h1 className="texto absolute text-azulEscuro font-anticdidone flex-col text-xl md:[70px] text-end inset-0 px-9 py-21 md:px-45 md:py-80">
                 <span>Sua  </span> 
                 <span className="text-golden"> essência, em </span>
                 <br />
