@@ -14,9 +14,10 @@ export default function HeroSection() {
             </Link>
             <h1 className="texto absolute text-azulEscuro font-anticdidone flex-col text-xl md:text-[70px] text-end inset-0 px-9 py-21 md:px-45 md:py-80">
                 <span>Sua  </span> 
-                <span className="text-golden"> essência, em </span>
+                <span className="text-golden"> essência</span>
+                <span>, em</span>
                 <br />
-                <span> forma de </span> 
+                <span>forma de </span> 
                 <span className="text-golden"> joia</span>.
             </h1>
         </div>
