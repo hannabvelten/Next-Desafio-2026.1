@@ -12,7 +12,7 @@ export default function HeroSection() {
                 className="object-cover object-[center_82%]"
                 />
             </Link>
-            <h1 className="texto absolute text-azulEscuro font-anticdidone flex-col text-xl md:[70px] text-end inset-0 px-9 py-21 md:px-45 md:py-80">
+            <h1 className="texto absolute text-azulEscuro font-anticdidone flex-col text-xl md:text-[70px] text-end inset-0 px-9 py-21 md:px-45 md:py-80">
                 <span>Sua  </span> 
                 <span className="text-golden"> essência, em </span>
                 <br />
