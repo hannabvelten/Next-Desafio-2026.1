@@ -35,7 +35,7 @@ export default function Header(){
             {isNavOpen ? (
                 <div className="md:hidden flex flex-col gap-4 bg-[#0F1C53] text-white px-1 py-4">
                     <Link href="/">Home</Link>
-                    <Link href="/produtos">Produtos</Link>
+                    <Link href="/pagProdutos">Produtos</Link>
                     <Link href="/contato">Contato</Link>
                     <Link href="/gerenciamento">Gerenciamento</Link>
                     <Link href="/carrinho">Carrinho</Link>
@@ -44,7 +44,7 @@ export default function Header(){
 
             <div className="hidden md:flex flex-1 gap-14 w-full h-full text-[#FFFFFF] font-medium items-center md:justify-end">
                 <Link href="/" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Home</Link>
-                <Link href="/produtos" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Produtos</Link>
+                <Link href="/pagProdutos" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Produtos</Link>
                 <Link href="/contato" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Contato</Link>
                 <Link href="/gerenciamento" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Gerenciamento</Link>
                 <Link href="/carrinho" className="hover:bg-[#c8b473] hover:text-black rounded-full px-2 py-1 transition-colors duration-300">Carrinho</Link>
