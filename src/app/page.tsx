@@ -19,11 +19,11 @@ export default async function Home() {
         <Box_SobreNos />
 
         <div className="p-2">
-          <ul className="flex flex-col gap-10 p-10">
+          <ul className="flex flex-col gap-10 p-7 md:flex-row md:p-15 md:px-30 md:gap-20">
             {data.map((item) => (
-              <li key={item.id} className="flex gap-5">
-                <p className="text-xl flex justify-center items-center uppercase">{item.title}</p>
-                <p className="text-xs">{item.text}</p>
+              <li key={item.id} className="flex gap-7 md:flex-col justify-center items-center">
+                <p className="text-[15px] md:text-3xl flex justify-center items-center uppercase text-azulEscuro font-medium">{item.title}</p>
+                <p className="text-[11px] md:text-xl flex md:justify-center">{item.text}</p>
               </li>
             ))}
           </ul>
