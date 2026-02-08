@@ -10,7 +10,7 @@ export default function Search() {
                     id="search"
                     name="search"
                     type="text"
-                    className=""
+                    className="w-full outline-none"
                     placeholder="O que você procura?"
                     /> 
 
