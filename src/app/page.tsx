@@ -3,6 +3,11 @@ import Carrossel from "../components/carrosel"
 import Box_SobreNos from "../components/box_sobreNos";
 import { getIdentities } from "@/lib/api/get-mvv";
 
+import { Target } from "lucide-react"; 
+import { Eye } from "lucide-react"; 
+import { } from "lucide-react"; 
+
+
 export default async function Home() {
   try{
     const data = await getIdentities();
@@ -13,14 +18,16 @@ export default async function Home() {
         <Carrossel />
         <Box_SobreNos />
 
-        <ul>
-          {data.map((item) => (
-            <li key={item.id}>
-              <p>{item.title}</p>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="p-2">
+          <ul className="flex flex-col gap-10 p-10">
+            {data.map((item) => (
+              <li key={item.id} className="flex gap-5">
+                <p className="text-xl flex justify-center items-center uppercase">{item.title}</p>
+                <p className="text-xs">{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   } catch (error) {

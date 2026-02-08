@@ -18,7 +18,6 @@ export async function getIdentities() : Promise<ApiProps[]> {
 
     const text = await res.text();
 
-    // pega a parte que começa no primeiro {
     const jsonStart = text.indexOf("{");
     const cleanJson = text.slice(jsonStart);
 
