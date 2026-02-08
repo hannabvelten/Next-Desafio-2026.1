@@ -8,7 +8,14 @@ export default function PagProdutos() {
                 <p>JOIAS</p>
             </div>
             <Search />
-            <Card />
+            <div className="md:grid md:grid-cols-2 justify-center">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
         </div>
     )
 }

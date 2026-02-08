@@ -26,7 +26,7 @@ export default function Card () {
             </div>
 
             <div className="w-full flex justify-center">
-                <div className="linha w-80 h-px bg-black"></div>
+                <div className="linha w-80 md:w-full h-px bg-black"></div>
             </div>
 
         </div>
