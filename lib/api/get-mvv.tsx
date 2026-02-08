@@ -1,0 +1,29 @@
+export type ApiProps = {
+    id: number;
+    title: string;
+    text: string;
+}
+
+type ApiResponse = {
+    identities: ApiProps[];
+    status: number;
+}
+
+export async function getIdentities() : Promise<ApiProps[]> {
+    const res = await fetch("https://treinamentoapi.codejr.com.br/api/identities");
+
+    if(!res.ok){
+        throw new Error(`Erro ao fetch data, status: ${res.status}`);
+    }
+
+    const text = await res.text();
+
+    // pega a parte que começa no primeiro {
+    const jsonStart = text.indexOf("{");
+    const cleanJson = text.slice(jsonStart);
+
+    const data: ApiResponse = JSON.parse(cleanJson);
+
+    return data.identities;
+
+}
