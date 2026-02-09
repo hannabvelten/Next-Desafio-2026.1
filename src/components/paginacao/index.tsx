@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from "@/components/ui/button"
 
 export default function Paginacao(){
     return (
@@ -7,11 +8,11 @@ export default function Paginacao(){
                 <div className="arco">
                     <ChevronLeft />
                 </div>
-                <div className='numeros flex gap-10 items-center font-medium'>
-                    <p className='bg-creme h-8 w-8 flex justify-center rounded-lg shadow-md items-center'>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                    <p>4</p>
+                <div className='numeros flex gap-10 items-center font-medium text-black'>
+                    <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100 border-1 border-azulEscurao'>1</Button>
+                    <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100'>2</Button>
+                    <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100'>3</Button>
+                    <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100'>4</Button>
                 </div>
                 <div className="arco">
                     <ChevronRight />
