@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { Button } from "@/components/ui/button"
+
 export default function Card () {
     return (
         <div>
@@ -11,22 +13,24 @@ export default function Card () {
                     alt="Brinco argola + estrela"
                     width={904}
                     height={904}
-                    className="object-cover h-40 w-40"
+                    className="object-cover h-40 w-40 md:h-50 md:w-50"
                     />
                 </Link>
     
                 <div className="conteudo flex flex-col gap-2">
-                    <h1 className="text-[18px] font-medium">Brinco Argola + Estrela</h1>
-                    <p className="text-[18px]">R$1.290,00</p>
-                    <p className="text-[11px]">ou 5x de R$258,00</p>
-                    <div className="bg-creme flex justify-center rounded-3xl p-1 w-24">
-                        <p className="text-[14px]">VER MAIS</p>
+                    <h1 className="text-[18px] md:text-2xl font-medium">Brinco Argola + Estrela</h1>
+                    <p className="text-[18px] md:text-2xl">R$1.290,00</p>
+                    <p className="text-[11px] md:text-xs">ou 5x de R$258,00</p>
+                    <div className="w-full flex">
+                        <Button className="bg-creme flex justify-center rounded-3xl p-1 w-24 hover:bg-amber-100 text-black font-light" variant="default">
+                            <p className="text-[14px] font-regular">VER MAIS</p>
+                        </Button>
                     </div>
                 </div>
             </div>
 
-            <div className="w-full flex justify-center">
-                <div className="linha w-80 md:w-full h-px bg-black"></div>
+            <div className="w-full flex justify-center md:justify-start md:py-10">
+                <div className="linha w-80 md:w-100 h-px bg-black"></div>
             </div>
 
         </div>

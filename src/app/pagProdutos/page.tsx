@@ -1,3 +1,4 @@
+import CardEspelhado from "@/src/components/card-espelhado";
 import Search from "../../components/search";
 import Card from "@/src/components/cards";
 
@@ -9,11 +10,11 @@ export default function PagProdutos() {
             </div>
             <Search />
             <div className="md:grid md:grid-cols-2 justify-center">
+                <CardEspelhado />
                 <Card />
+                <CardEspelhado />
                 <Card />
-                <Card />
-                <Card />
-                <Card />
+                <CardEspelhado />
                 <Card />
             </div>
         </div>
