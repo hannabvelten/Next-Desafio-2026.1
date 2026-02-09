@@ -30,7 +30,7 @@ export default function CardEspelhado () {
             </div>
 
             <div className="w-full flex justify-center md:justify-end md:py-10">
-                <div className="linha w-80 md:w-100 h-px bg-black"></div>
+                <div className="linha w-80 md:w-150 h-px bg-black"></div>
             </div>
 
         </div>

@@ -1,6 +1,7 @@
 import CardEspelhado from "@/src/components/card-espelhado";
 import Search from "../../components/search";
 import Card from "@/src/components/cards";
+import Paginacao from "@/src/components/paginacao";
 
 export default function PagProdutos() {
     return (
@@ -17,6 +18,7 @@ export default function PagProdutos() {
                 <CardEspelhado />
                 <Card />
             </div>
+            <Paginacao />
         </div>
     )
 }
