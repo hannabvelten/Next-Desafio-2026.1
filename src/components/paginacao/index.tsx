@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button"
 export default function Paginacao(){
     return (
         <div className="w-full flex justify-center p-10 items-center">
-            <div className="tudo flex w-150 justify-center gap-10 items-center">
+            <div className="tudo flex w-150 justify-center md:gap-10 gap-7 items-center">
                 <div className="arco">
                     <ChevronLeft />
                 </div>
-                <div className='numeros flex gap-10 items-center font-medium text-black'>
+                <div className='numeros flex gap-5 items-center font-medium text-black'>
                     <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100 border-1 border-azulEscurao'>1</Button>
                     <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100'>2</Button>
                     <Button className='bg-creme h-8 w-8 md:h-10 md:w-10 flex text-black justify-center rounded-lg shadow-md items-center hover:bg-amber-100'>3</Button>
