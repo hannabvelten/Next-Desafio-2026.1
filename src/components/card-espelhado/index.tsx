@@ -22,7 +22,7 @@ export default function CardEspelhado () {
                     <p className="text-[11px] md:text-xs flex md:justify-end">ou 5x de R$258,00</p>
                     <div className="w-full flex md:justify-end">
                         <Button className="bg-creme flex justify-center rounded-3xl p-1 w-24 hover:bg-amber-100 text-black font-light" variant="default">
-                            <p className="text-[14px] font-regular">VER MAIS</p>
+                            <Link href="/produtoIndividual" className="text-[14px] font-regular">VER MAIS</Link>
                         </Button>
                     </div>
                 </div>
