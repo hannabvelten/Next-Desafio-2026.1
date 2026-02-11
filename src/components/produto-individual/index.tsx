@@ -21,7 +21,7 @@ export default function PagPIndivudual (){
                 </div>
 
                 <div className="carrinho w-full md:flex justify-center pt-7 sm:hidden">
-                    <Button className="bg-golden text-black w-100 rounded-4xl">ADICIONAR AO CARRINHO</Button>
+                    <Button className="bg-golden text-black w-100 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function PagPIndivudual (){
             </div>
 
             <div className="carrinho w-full flex justify-center pt-7 md:hidden">
-                <Button className="bg-golden text-black w-80 rounded-4xl">ADICIONAR AO CARRINHO</Button>
+                <Button className="bg-golden text-black w-80 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
             </div>
         </div>
     )
