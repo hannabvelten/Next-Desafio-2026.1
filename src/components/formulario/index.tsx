@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button"
 
 export default function Formulario() {
     return(
-        <div className="p-6">
-            <div className="bg-creme w-full rounded-3xl flex flex-col justify-center p-4 gap-6">
-                <h1 className="text-center">Fale com a gente:</h1>
+        <div className="p-4">
+            <div className="bg-creme w-full md:w-110 rounded-3xl flex flex-col justify-center p-4 gap-6">
+                <h1 className="text-center text-xl">Fale com a gente:</h1>
                 <form className="flex flex-col gap-6">
                     <input className="bg-brancoGelo py-2 px-3 rounded-4xl w-full border-1 border-golden text-sm shadow-md/30" placeholder="Digite seu nome..."></input>
                     <input className="bg-brancoGelo py-2 px-3 rounded-4xl w-full border-1 border-golden text-sm shadow-md/20" placeholder="Digite seu email..."></input>

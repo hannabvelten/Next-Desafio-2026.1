@@ -3,12 +3,8 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react";
 export default function Contatos() {
     return (
         <div>
-            <div className="w-full flex flex-col justify-center items-center p-7 gap-4">
-                <h1 className="text-3xl md:text-4xl text-azulEscuro">Entre em Contato</h1>
-                <p className="text-center text-xs md:text-sm">Tem alguma dúvida, sugestão ou precisa de ajuda com seu pedido? Estamos aqui para te atender com carinho e atenção!</p>
-            </div>
 
-            <div className="contatos flex flex-col gap-11">
+            <div className="contatos flex flex-col gap-11 md:py-5">
                 <div className="celular&email w-full flex justify-center text-xs gap-10 md:gap-19 text-center items-center">
                     <div className="celular flex flex-col md:gap-2">
                         <div className="flex gap-2 items-center">
