@@ -1,6 +1,6 @@
 import HeroSection from "../components/hero_section";
 import Carrossel from "../components/carrosel"
-import Box_SobreNos from "../components/box_sobreNos";
+import Box_SobreNos from "../components/box-sobreNos";
 import GetMvv from "../components/get-mmv";
 
 export default function Home() {
