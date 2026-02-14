@@ -17,7 +17,7 @@ export default function Contatos() {
                             </div>
                             <p className="font-medium md:text-xl">Celular</p>
                         </div>
-                        <p className="text-sm">(32) 91234-5678</p>
+                        <p className="md:text-sm">(32) 91234-5678</p>
                     </div>
 
                     <div className="email flex flex-col text-center md:gap-2">
@@ -25,7 +25,7 @@ export default function Contatos() {
                             <Mail size={16} className="md:w-5 md:h-5"/>
                             <p className="font-medium md:text-xl">Email</p>
                         </div>
-                        <p className="text-sm">clair.contato@gmail.com</p>
+                        <p className="md:text-sm">clair.contato@gmail.com</p>
                     </div>
                 </div>
 
@@ -35,14 +35,14 @@ export default function Contatos() {
                             <Clock size={16} className="md:w-5 md:h-5"/>
                             <p className="font-medium md:text-xl">Atendimento</p>
                         </div>
-                        <p className="text-sm">Seg a Sex — 9h às 18h</p>
+                        <p className="md:text-sm">Seg a Sex — 9h às 18h</p>
                     </div>
                     <div className="loc flex flex-col md:gap-2">
                         <div className="flex gap-2 justify-center">
                             <MapPin size={16} className="md:w-5 md:h-5"/>
                             <p className="font-medium md:text-xl">Localização</p>
                         </div>
-                        <p className="text-sm">São Mateus - Juiz de Fora, MG</p>
+                        <p className="md:text-sm">São Mateus - Juiz de Fora, MG</p>
                     </div>
                 </div>
             </div>
