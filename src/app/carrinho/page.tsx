@@ -1,5 +1,5 @@
 import ItensCarrinho from "@/src/components/itens-carrinho"
-
+import Pedido from "@/src/components/pedido-carrinho"
 
 export default function Carrinho(){
     return(
@@ -13,6 +13,7 @@ export default function Carrinho(){
             </div>
 
             <ItensCarrinho />
+            <Pedido />
         </div>
     )
 }
