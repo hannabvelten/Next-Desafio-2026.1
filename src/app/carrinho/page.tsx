@@ -5,15 +5,17 @@ export default function Carrinho(){
     return(
         <div>
             <div className="w-full flex">
-                <p className="md:text-4xl text-2xl font-semibold px-5 py-5 md:px-20 md:py-10">Meu Carrinho</p>
+                <p className="md:text-4xl text-2xl font-semibold px-5 py-5 md:px-47 md:py-7">Meu Carrinho</p>
             </div>
 
-            <div className="w-full flex justify-center">
-                <div className="linha w-83 md:w-150 h-px bg-black"></div>
+            <div className="w-full flex sm:justify-center h-2 md:justify-start md:px-47">
+                <div className="linha w-83 md:w-200 h-px bg-black"></div>
             </div>
 
-            <ItensCarrinho />
-            <Pedido />
+            <div className="flex md:justify-center">
+                <ItensCarrinho />
+                <Pedido />
+            </div>
         </div>
     )
 }
