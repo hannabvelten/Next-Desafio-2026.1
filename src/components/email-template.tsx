@@ -27,7 +27,7 @@ export const WelcomeEmail = ({
     subject,
     message,
 }: WelcomeEmailProps) => {
-    const previewText = `Welcome to ${useremail}, ${username}!`;
+    const previewText = `Email de ${useremail}, para Clair Acessórios`;
 
     return (
     <Html>
@@ -58,7 +58,7 @@ export const WelcomeEmail = ({
             Email: {useremail}
           </Text>
           <Text style={{ textAlign: 'start', fontSize: '14px', color: 'black' }}>
-            Asunto: {subject}
+            Assunto: {subject}
           </Text>
           <Text style={{ textAlign: 'start', fontSize: '14px', color: 'black' }}>
             Mensagem: {message}
