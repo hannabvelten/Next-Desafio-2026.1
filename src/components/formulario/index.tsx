@@ -5,9 +5,11 @@ import { formSchema } from "@/src/schema/form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import type { FormValue } from "@/src/schema/form";
+import { useState } from "react";
 
 export default function Formulario() {
-
+    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false)
+    const [error, setError] = useState<string | null>(null)
     const {handleSubmit, register, formState: {errors}, reset} = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -26,11 +28,13 @@ export default function Formulario() {
         })
 
         if(response.ok){
+            setIsSubmitSuccessful(true)
             reset()
         }
         else {
             const err = await response.json();
             console.log(err);
+            setError("Ocorreu um erro ao enviar o email")
         }
 
     }
@@ -50,14 +54,17 @@ export default function Formulario() {
                         <label className="text-red-700 text-xs">{errors.email?.message}</label>
                     </div>
 
-                    <input className="bg-brancoGelo py-2 px-3 rounded-4xl w-full border-1 border-golden text-sm shadow-md/20" placeholder="Sobre o que você que falar?"></input>
-                    <textarea className="bg-brancoGelo py-2 px-3 rounded-4xl resize-none w-full h-30 border-1 border-golden text-sm flex shadow-md/20" placeholder="Digite sua mensagem..."></textarea>
+                    <input className="bg-brancoGelo py-2 px-3 rounded-4xl w-full border-1 border-golden text-sm shadow-md/20" placeholder="Sobre o que você que falar?" {...register("subject")}></input>
+                    <textarea className="bg-brancoGelo py-2 px-3 rounded-4xl resize-none w-full h-30 border-1 border-golden text-sm flex shadow-md/20" placeholder="Digite sua mensagem..." {...register("message")}></textarea>
 
                     <div className="w-full flex justify-center">
                         <Button className="bg-amarelinho flex justify-center rounded-3xl p-2 hover:bg-amber-100 text-black font-medium shadow-md/30" variant="default" type="submit">
                             Enviar mensagem
                         </Button>
                     </div>
+
+                    {isSubmitSuccessful && <span className="text-green-500">Email enviado!</span>}
+                    {error && <span>Erro ao enviar email!</span>}
                 </form>
             </div>
         </div>

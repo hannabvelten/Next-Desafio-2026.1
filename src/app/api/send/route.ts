@@ -10,9 +10,9 @@ export async function POST(request: Request): Promise<Response> {
 
     const { data, error } = await resend.emails.send({
         from: 'Acme <onboarding@resend.dev>',
-        to: ['delivered@resend.dev'],
+        to: ['hanna.velten@estudante.ufjf.br'],
         subject: 'Treinamento Email',
-        react: WelcomeEmail({ username: 'John', useremail: "" }),
+        react: WelcomeEmail({ username: body.name , useremail: body.email, subject: body.subject, message: body.message }),
     });
 
     if (error) {

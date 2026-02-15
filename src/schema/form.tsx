@@ -6,7 +6,9 @@ export const formSchema = z.object({
     }),
     email: z.string().email({
         message: "Por favor insira um email válido"
-    })
+    }),
+    subject: z.string(),
+    message: z.string()
 })
 
 export type FormValue = z.infer<typeof formSchema>
