@@ -1,5 +1,6 @@
 import Contatos from "@/src/components/contatos";
 import Formulario from "@/src/components/formulario";
+import Mapa from "@/src/components/mapa";
 
 export default function Contato() {
     return(
@@ -10,7 +11,10 @@ export default function Contato() {
             </div>
 
             <div className=" flex md:flex-row sm:flex-col justify-center md:gap-30">
-                <Contatos />
+                <div className="flex flex-col gap-10 pb-10">
+                    <Contatos />
+                    <Mapa />
+                </div>
                 <Formulario />
             </div>
         </div>

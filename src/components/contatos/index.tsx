@@ -38,7 +38,7 @@ export default function Contatos() {
                             <MapPin size={16} className="md:w-5 md:h-5"/>
                             <p className="font-medium md:text-xl">Localização</p>
                         </div>
-                        <p className="md:text-sm">São Mateus - Juiz de Fora, MG</p>
+                        <p className="md:text-sm">R. Morais e Castro - Passos, Juiz de Fora, MG</p>
                     </div>
                 </div>
             </div>
