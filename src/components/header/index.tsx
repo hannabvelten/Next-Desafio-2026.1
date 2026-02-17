@@ -37,7 +37,7 @@ export default function Header(){
                     <Link href="/">Home</Link>
                     <Link href="/pagProdutos">Produtos</Link>
                     <Link href="/contato">Contato</Link>
-                    <Link href="/gerenciamento">Gerenciamento</Link>
+                    <Link href="/admin">Gerenciamento</Link>
                     <Link href="/carrinho">Carrinho</Link>
                 </div>
             ) : null}
@@ -46,7 +46,7 @@ export default function Header(){
                 <Link href="/" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Home</Link>
                 <Link href="/pagProdutos" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Produtos</Link>
                 <Link href="/contato" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Contato</Link>
-                <Link href="/gerenciamento" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Gerenciamento</Link>
+                <Link href="/admin" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Gerenciamento</Link>
                 <Link href="/carrinho" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Carrinho</Link>
                 <div className=" bg-[#C9A24D] text-black font-medium rounded-full px-2 py-1 hover:bg-creme rounded-full px-2 py-1 transition-colors duration-300">Login</div>
             </div>
