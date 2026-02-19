@@ -6,9 +6,9 @@ export default function AdminLayout({
     children: React.ReactNode;
 }>) {
     return(
-        <section className=" md:min-h-screen">
+        <section className=" md:min-h-screen md:flex">
             <Sidebar />
-            <section className="px-4 py-4 sm:px-20 sm:ml-72">
+            <section className="px-4 py-4">
                 {children}
             </section>
         </section>
