@@ -17,7 +17,7 @@ export default function Sidebar(){
     const toggleAdminSidebar = () => setIsAdminSidebarOpen(!isAdminSidebarOpen)
 
     return (
-            <div className="md:w-60 md:min-h-screen">
+            <div className="md:w-65 md:min-h-screen">
                 <div className="bg-azulEscurao w-full md:min-h-screen">
                     <div className="flex">
                         <button className="icone text-white text-2xl md:hidden text-start px-3" onClick={toggleAdminSidebar}>

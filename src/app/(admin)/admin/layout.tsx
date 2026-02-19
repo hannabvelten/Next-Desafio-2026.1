@@ -8,9 +8,7 @@ export default function AdminLayout({
     return(
         <section className=" md:min-h-screen md:flex">
             <Sidebar />
-            <section className="px-4 py-4">
-                {children}
-            </section>
+            {children}
         </section>
     )
 }
