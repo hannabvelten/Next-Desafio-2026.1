@@ -60,11 +60,11 @@ export default function Sidebar(){
                     </div>
                     
                     <div className="text-white hidden md:flex flex-col h-110 gap-10 px-6 py-15">
-                        <div className="flex gap-3">
+                        <div className="flex gap-3 px-1">
                             <HouseIcon />
                             <Link href="/">Home</Link>
                         </div>
-                        <div className="flex gap-3">
+                        <div className="flex gap-3 bg-amarelinho text-black rounded-4xl py-2 px-1">
                             <Clipboard />
                             <Link href="/gerenciamento">Gerenciamento</Link>
                         </div>

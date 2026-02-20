@@ -31,13 +31,13 @@ export default function InputsLogin (){
                         <input className="w-full outline-none" placeholder="Senha"></input>
                     </div>
                     
-                    <button type="submit" className="bg-azulEscuro w-30 text-xs md:text-xl p-2 rounded-4xl text-white">Login</button>
+                    <Link href='/admin' className="bg-azulEscuro w-30 text-xs md:text-xl p-2 text-center rounded-4xl text-white">Login</Link>
 
                 </form>
 
                 <div className="flex gap-2">
                     <p>Não tem uma conta?</p>
-                    <Link href='/' className="text-golden font-medium">Cadastre-se</Link>
+                    <Link href='/cadastre-se' className="text-golden font-medium">Cadastre-se</Link>
                 </div>
 
             </div>
