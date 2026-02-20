@@ -39,6 +39,7 @@ export default function Header(){
                     <Link href="/contato">Contato</Link>
                     <Link href="/admin">Gerenciamento</Link>
                     <Link href="/carrinho">Carrinho</Link>
+                    <Link href="/login" className="  text-white font-medium rounded-full px-2 py-1 rounded-full px-2 py-1 transition-colors duration-300">Login</Link>
                 </div>
             ) : null}
 

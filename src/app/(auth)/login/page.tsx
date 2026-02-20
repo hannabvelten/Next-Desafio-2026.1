@@ -3,7 +3,7 @@ import InputsLogin from "@/src/components/inputs-login";
 
 export default function Login (){
     return (
-        <div>
+        <div className="flex">
             <ImagemLogin />
             <InputsLogin />
         </div>
