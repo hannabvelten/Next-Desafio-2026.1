@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Criar from "@/src/components/modal-criar"
 import Paginacao from "@/src/components/paginacao"
 import Tabela from "@/src/components/tabela-gerenciamento"
 import { Plus } from "lucide-react"
@@ -14,7 +15,7 @@ export default function Page(){
                 </Button>
             </div>
             <Tabela />
-            
+            <Criar />
         </div>
     )
 }
