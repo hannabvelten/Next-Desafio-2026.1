@@ -3,6 +3,7 @@ import Image from "next/image"
 
 import { Eye, SquarePen, Trash } from "lucide-react";
 import Paginacao from "../paginacao";
+import Visualizar from "../modal-visualizar";
 
 export default function Tabela(){
     return(
@@ -38,7 +39,7 @@ export default function Tabela(){
                         <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
                         <td className="p-2">
                             <div className="flex justify-center gap-3">
-                                <Eye />
+                                <Visualizar />
                                 <SquarePen />
                                 <Trash className="text-red-700"/>
                             </div>
