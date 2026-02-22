@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Eye, SquarePen, Trash } from "lucide-react";
 import Paginacao from "../paginacao";
 import Visualizar from "../modal-visualizar";
+import Editar from "../modal-editar";
 
 export default function Tabela(){
     return(
@@ -40,7 +41,7 @@ export default function Tabela(){
                         <td className="p-2">
                             <div className="flex justify-center gap-3">
                                 <Visualizar />
-                                <SquarePen />
+                                <Editar />
                                 <Trash className="text-red-700"/>
                             </div>
                         </td>
