@@ -5,6 +5,7 @@ import { Eye, SquarePen, Trash } from "lucide-react";
 import Paginacao from "../paginacao";
 import Visualizar from "../modal-visualizar";
 import Editar from "../modal-editar";
+import Excluir from "../modal-excluir";
 
 export default function Tabela(){
     return(
@@ -42,7 +43,7 @@ export default function Tabela(){
                             <div className="flex justify-center gap-3">
                                 <Visualizar />
                                 <Editar />
-                                <Trash className="text-red-700"/>
+                                <Excluir />
                             </div>
                         </td>
                     </tr>
