@@ -9,7 +9,7 @@ import Excluir from "../modal-excluir";
 
 export default function Tabela(){
     return(
-        <div className="flex justify-center overflow-x-auto">
+        <div className="w-full overflow-x-auto md:flex md:justify-center px-5">
             <table className="w-300 bg-creme rounded-4xl">
                 <thead className="">
                     <tr className="">
