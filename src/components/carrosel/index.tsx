@@ -6,9 +6,13 @@ import Image from "next/image"
 import useEmblaCarousel from 'embla-carousel-react'
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import type { Carrossel } from '@/types/home/home';
 
+type CarrosselProps = {
+  products: Carrossel[]
+}
 
-export default function Carrossel() {
+export default function Carrossel({products}: CarrosselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     slidesToScroll:1,
     align:'start',

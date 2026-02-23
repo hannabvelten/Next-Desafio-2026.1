@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <Carrossel />
+      <Carrossel products={products} />
       <Box_SobreNos />
       <GetMvv />
       
