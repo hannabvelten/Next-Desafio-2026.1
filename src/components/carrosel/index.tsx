@@ -33,7 +33,9 @@ export default function Carrossel({products}: CarrosselProps) {
       <div className="viewport overflow-hidden py-9 " ref={emblaRef}>
 
         <div className="container flex gap-10 mx-auto">
-          <CardCarrossel />
+          {products.map((product, index) => (
+            <CardCarrossel key={index} product={product}/>
+          ))}
         </div>
       </div>
 
