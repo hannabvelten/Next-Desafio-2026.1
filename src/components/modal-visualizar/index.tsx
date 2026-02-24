@@ -1,10 +1,11 @@
 'use client'
 
+import { Product } from "@/types/data";
 import { Eye } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Visualizar(){
+export default function Visualizar({ product }: { product: Product }){
 
     const [aberto, setAberto] = useState(false)
 
@@ -24,7 +25,7 @@ export default function Visualizar(){
 
                         <div className="p-10 flex flex-col md:flex-row gap-10 items-center">
                             <Image 
-                            src={'/imagens/anelDuoCravejado.jpg'}
+                            src={product.image}
                             alt="anel cravejado"
                             width={904}
                             height={904}
@@ -32,9 +33,9 @@ export default function Visualizar(){
                             />
 
                             <div className="flex flex-col gap-3 text-start">
-                                <p className="font-semibold">Anel Duo Cravejado</p>
-                                <p className="text-xs font-light">Anel em prata 925 com banho de ouro, composto por duas faixas delicadamente cravejadas com zircônias, trazendo brilho e sofisticação para o dia a dia ou ocasiões especiais.</p>
-                                <p className="font-medium">R$350,00</p>
+                                <p className="font-semibold">{product.title}</p>
+                                <p className="text-xs font-light">{product.description} </p>
+                                <p className="font-medium">R${product.price},00</p>
                             </div>
                         </div>
 
