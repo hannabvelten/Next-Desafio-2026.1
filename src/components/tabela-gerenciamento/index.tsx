@@ -6,8 +6,13 @@ import Paginacao from "../paginacao";
 import Visualizar from "../modal-visualizar";
 import Editar from "../modal-editar";
 import Excluir from "../modal-excluir";
+import { Product } from "@/types/data";
 
-export default function Tabela(){
+type TabelaProps = {
+    products: Product[]
+}
+
+export default function Tabela({ products }: TabelaProps){
     return(
         <div className="w-full overflow-x-auto md:flex md:justify-center px-5">
             <table className="w-300 bg-creme rounded-4xl">
@@ -22,25 +27,26 @@ export default function Tabela(){
                     </tr>
                 </thead>
 
-                <tr className=" border-black border w-200 py-3"/>
+                <tr className=" border-b border-black"></tr>
 
                 <tbody>
-                    <tr className="text-center">
+                    {products.map((product, index) => (
+                    <tr key={index} className="text-center border-b border-black">
                         <td className="py-3">
                             <Link href='/' className="flex justify-center">
-                                <Image 
-                                src={'/imagens/anelDuoCravejado.jpg'}
+                                <Image
+                                src={product.image}
                                 alt="Logo da marca"
                                 width={904}
                                 height={904}
-                                className="h-15 w-auto"
+                                className="h-15 w-15 object-cover"
                                 />
                             </Link>
                         </td>
-                        <td className="p-2">Anel Duo Cravejado</td>
-                        <td className="p-2">Prata 925</td>
-                        <td className="p-2">R$350,00</td>
-                        <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
+                        <td className="p-2">{product.title}</td>
+                        <td className="p-2">{product.material}</td>
+                        <td className="p-2">R${product.price},00</td>
+                        <td className="max-w-[50px] truncate p-2">{product.description}</td>
                         <td className="p-2">
                             <div className="flex justify-center gap-3">
                                 <Visualizar />
@@ -49,85 +55,8 @@ export default function Tabela(){
                             </div>
                         </td>
                     </tr>
-
-                    <tr className=" border-black border w-200 py-3"/>
-
-                    <tr className="text-center">
-                        <td className="py-5">
-                            <Link href='/' className="flex justify-center">
-                                <Image 
-                                src={'/imagens/anelDuoCravejado.jpg'}
-                                alt="Logo da marca"
-                                width={904}
-                                height={904}
-                                className="h-15 w-auto"
-                                />
-                            </Link>
-                        </td>
-                        <td className="p-2">Anel Duo Cravejado</td>
-                        <td className="p-2">R$350,00</td>
-                        <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
-                        <td className="p-2">
-                            <div className="flex justify-center gap-3">
-                                <Eye />
-                                <SquarePen />
-                                <Trash className="text-red-700"/>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr className=" border-black border w-200 py-3"/>
-
-                    <tr className="text-center">
-                        <td className="py-5">
-                            <Link href='/' className="flex justify-center">
-                                <Image 
-                                src={'/imagens/anelDuoCravejado.jpg'}
-                                alt="Logo da marca"
-                                width={904}
-                                height={904}
-                                className="h-15 w-auto"
-                                />
-                            </Link>
-                        </td>
-                        <td className="p-2">Anel Duo Cravejado</td>
-                        <td className="p-2">R$350,00</td>
-                        <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
-                        <td className="p-2">
-                            <div className="flex justify-center gap-3">
-                                <Eye />
-                                <SquarePen />
-                                <Trash className="text-red-700"/>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr className=" border-black border w-200 py-3"/>
-
-                    <tr className="text-center">
-                        <td className="py-5">
-                            <Link href='/' className="flex justify-center">
-                                <Image 
-                                src={'/imagens/anelDuoCravejado.jpg'}
-                                alt="Logo da marca"
-                                width={904}
-                                height={904}
-                                className="h-15 w-auto"
-                                />
-                            </Link>
-                        </td>
-                        <td className="p-2">Anel Duo Cravejado</td>
-                        <td className="p-2">R$350,00</td>
-                        <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
-                        <td className="p-2">
-                            <div className="flex justify-center gap-3">
-                                <Eye />
-                                <SquarePen />
-                                <Trash className="text-red-700"/>
-                            </div>
-                        </td>
-                    </tr>
-
+                    ))} 
+                
                     <tr className=" border-black border w-200 py-3"/>
                     
                     <tr>
@@ -135,7 +64,6 @@ export default function Tabela(){
                             <Paginacao />
                         </td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
