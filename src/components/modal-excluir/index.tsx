@@ -1,11 +1,13 @@
 'use client'
 
 import { deleteProduct } from "@/actions/gerenciamento/actions";
+import { Product } from "@/types/data";
 import { Eye, Trash } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Excluir ({id}: { id: number | undefined}){
+export default function Excluir ({ product }: { product: Product }){
+
 
     const [aberto, setAberto] = useState(false)
 
@@ -25,7 +27,7 @@ export default function Excluir ({id}: { id: number | undefined}){
 
                         <div className="p-8 flex flex-col md:flex-row gap-10 items-center">
                             <Image 
-                            src={'/imagens/anelDuoCravejado.jpg'}
+                            src={product.image}
                             alt="anel cravejado"
                             width={904}
                             height={904}
@@ -33,9 +35,9 @@ export default function Excluir ({id}: { id: number | undefined}){
                             />
 
                             <div className="flex flex-col gap-3 text-start">
-                                <p className="font-semibold">Anel Duo Cravejado</p>
-                                <p className="text-xs font-light">Anel em prata 925 com banho de ouro, composto por duas faixas delicadamente cravejadas com zircônias, trazendo brilho e sofisticação para o dia a dia ou ocasiões especiais.</p>
-                                <p className="font-medium">R$350,00</p>
+                                <p className="font-semibold">{product.title}</p>
+                                <p className="text-xs font-light">{product.description} </p>
+                                <p className="font-medium">R${product.price},00</p>
                             </div>
                         </div>
 
@@ -43,7 +45,7 @@ export default function Excluir ({id}: { id: number | undefined}){
                             <button onClick={() => setAberto(false)} className="text-white bg-anil rounded-3xl cursor-pointer px-4 py-2">
                                 Cancelar
                             </button>
-                            <button onClick={() => deleteProduct(id)} className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
+                            <button onClick={() => deleteProduct(product.id)} className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
                                 Excluir
                             </button>
                         </div>

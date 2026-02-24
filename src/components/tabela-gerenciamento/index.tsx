@@ -13,6 +13,8 @@ type TabelaProps = {
 }
 
 export default function Tabela({ products }: TabelaProps){
+
+    
     return(
         <div className="w-full overflow-x-auto md:flex md:justify-center px-5">
             <table className="w-300 bg-creme rounded-4xl">
@@ -51,7 +53,7 @@ export default function Tabela({ products }: TabelaProps){
                             <div className="flex justify-center gap-3">
                                 <Visualizar id= {product?.id} />
                                 <Editar id={product?.id}/>
-                                <Excluir id={product.id} />
+                                <Excluir product={product} />
                             </div>
                         </td>
                     </tr>
