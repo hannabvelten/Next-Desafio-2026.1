@@ -49,9 +49,9 @@ export default function Tabela({ products }: TabelaProps){
                         <td className="max-w-[50px] truncate p-2">{product.description}</td>
                         <td className="p-2">
                             <div className="flex justify-center gap-3">
-                                <Visualizar />
-                                <Editar />
-                                <Excluir />
+                                <Visualizar id= {product?.id} />
+                                <Editar id={product?.id}/>
+                                <Excluir id={product.id} />
                             </div>
                         </td>
                     </tr>

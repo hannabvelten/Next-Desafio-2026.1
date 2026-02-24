@@ -4,7 +4,7 @@ import { SquarePen } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Editar (){
+export default function Editar ( {id}: { id: number | undefined}){
 
     const [aberto, setAberto] = useState(false)
 

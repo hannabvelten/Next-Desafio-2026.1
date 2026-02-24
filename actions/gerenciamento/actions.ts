@@ -18,3 +18,9 @@ export async function getTabela(){
     })
     return products;
 }
+
+export async function deleteProduct(id: number | undefined) {
+    await prisma.product.delete({
+        where: { id },
+    });
+}

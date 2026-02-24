@@ -3,7 +3,7 @@ export type Product = {
     title?: string;
     image?: string;
     price?: number;
-    meterial?: string;
+    material?: string;
     description?: string;
     published?: boolean;
 }

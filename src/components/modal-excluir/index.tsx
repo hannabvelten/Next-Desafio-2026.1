@@ -1,10 +1,11 @@
 'use client'
 
+import { deleteProduct } from "@/actions/gerenciamento/actions";
 import { Eye, Trash } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Excluir (){
+export default function Excluir ({id}: { id: number | undefined}){
 
     const [aberto, setAberto] = useState(false)
 
@@ -42,7 +43,7 @@ export default function Excluir (){
                             <button onClick={() => setAberto(false)} className="text-white bg-anil rounded-3xl cursor-pointer px-4 py-2">
                                 Cancelar
                             </button>
-                            <button onClick={() => setAberto(false)} className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
+                            <button onClick={() => deleteProduct(id)} className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
                                 Excluir
                             </button>
                         </div>
