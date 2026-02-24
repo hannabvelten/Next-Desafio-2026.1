@@ -8,9 +8,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Carrossel } from '@/types/home/home';
 import CardCarrossel from '../cards-carrossel';
+import { Product } from '@/types/data';
 
 type CarrosselProps = {
-  products: Carrossel[]
+  products: Product[]
 }
 
 export default function Carrossel({products}: CarrosselProps) {

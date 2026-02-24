@@ -15,6 +15,7 @@ export default function Tabela(){
                     <tr className="">
                         <th className="p-2 py-5">IMAGEM</th>
                         <th className="p-2">NOME DO PRODUTO</th>
+                        <th className="p-2">MATERIAL</th>
                         <th className="p-2">PREÇO</th>
                         <th className="p-2">DESCRIÇÃO</th>
                         <th className="p-2">AÇÕES</th>
@@ -37,6 +38,7 @@ export default function Tabela(){
                             </Link>
                         </td>
                         <td className="p-2">Anel Duo Cravejado</td>
+                        <td className="p-2">Prata 925</td>
                         <td className="p-2">R$350,00</td>
                         <td className="max-w-[50px] truncate p-2">Anel em prata 925 lindo pra usar em qualquer ocasiao e dia da sua vida lmojcidvdj</td>
                         <td className="p-2">

@@ -4,9 +4,10 @@ import Image from "next/image"
 import useEmblaCarousel from 'embla-carousel-react'
 import { Card, CardContent } from "@/components/ui/card";
 import { Carrossel } from '@/types/home/home';
+import { Product } from '@/types/data';
 
 type CardCarrosselProps = {
-    product: Carrossel
+    product: Product
 }
 
 export default function CardCarrossel({ product }: CardCarrosselProps){
@@ -18,7 +19,7 @@ export default function CardCarrossel({ product }: CardCarrosselProps){
                         
                             <div className='relative w-full h-58'>
                                 <Image
-                                src={product.image}
+                                src={product.image || '/imagens/colarSol.jpg'}
                                 alt="foto anel cravejado"
                                 fill
                                 className="rounded-t-xl object-cover object-center"
