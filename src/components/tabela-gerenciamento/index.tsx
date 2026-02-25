@@ -14,7 +14,7 @@ type TabelaProps = {
 
 export default function Tabela({ products }: TabelaProps){
 
-    
+
     
     return(
         <div className="w-full overflow-x-auto md:flex md:justify-center px-5">
@@ -37,13 +37,19 @@ export default function Tabela({ products }: TabelaProps){
                     <tr key={index} className="text-center border-b border-black">
                         <td className="py-3">
                             <Link href='/' className="flex justify-center">
-                                <Image
-                                src={product.image}
-                                alt="Logo da marca"
-                                width={904}
-                                height={904}
-                                className="h-15 w-15 object-cover"
-                                />
+                                {product.image ? (
+                                    <Image
+                                        src={product.image}
+                                        alt="nome"
+                                        width={60}
+                                        height={60}
+                                        className="h-15 w-15 object-cover rounded"
+                                    />
+                                    ) : (
+                                    <div className="h-15 w-15 flex items-center justify-center text-xs text-gray-400 border rounded">
+                                        Sem imagem
+                                    </div>
+                                )}
                             </Link>
                         </td>
                         <td className="p-2">{product.title}</td>

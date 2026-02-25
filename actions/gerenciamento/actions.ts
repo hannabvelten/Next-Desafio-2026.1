@@ -4,6 +4,8 @@ import prisma from "@/lib/db"
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+import { writeFile } from "fs/promises"
+
 export async function getTabela(){
     const products = await prisma.product.findMany({
         where: {
@@ -29,20 +31,36 @@ export async function deleteProduct(id: number | undefined) {
 }
 
 export async function createProduct(formData: FormData) {
-    const title = formData.get("name") as string;
-    const price = Number(formData.get("price") as string);
-    const description = formData.get("description") as string;
-    const imageFile = formData.get("image") as File;
-    const image = imageFile?.name ?? "";
-    const material = formData.get("material") as string;
+
+    const title = formData.get("title") as string
+    const price = Number(formData.get("price"))
+    const description = formData.get("description") as string
+    const material = formData.get("material") as string
+
+    const imageFile = formData.get("image") as File
+
+    console.log("IMAGE FILE:", imageFile);
+    console.log("SIZE:", imageFile?.size);
+
+    let imageUrl: string | null = null
+
+    if (imageFile && imageFile.size > 0) {
+        const bytes = await imageFile.arrayBuffer()
+        const buffer = Buffer.from(bytes)
+
+        const fileName = Date.now() + "-" + imageFile.name
+        await writeFile(`./public/imagens/${fileName}`, buffer)
+
+        imageUrl = `/imagens/${fileName}`
+    }
 
     await prisma.product.create({
         data: {
             title,
             price,
             description,
-            image,
             material,
+            image: imageUrl,
         }
     })
 
@@ -60,4 +78,25 @@ export async function fetchProductById (id: number | undefined){
             material: true,
         }
     })
+}
+
+export async function updateProduct (id: number | undefined , formData: FormData) {
+    const title = formData.get("title") as string;
+    const description = formData.get("description") as string
+    const price = Number(formData.get("price"))
+    const material = formData.get("material") as string
+    const image = formData.get("image") as File
+
+    await prisma.product.update({
+        where: { id },
+        data: {
+            title,
+            price,
+            description,
+            material,
+            
+        },
+    });
+    redirect("/admin")
+
 }

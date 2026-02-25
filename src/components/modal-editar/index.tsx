@@ -1,5 +1,6 @@
 'use client'
 
+import { updateProduct } from "@/actions/gerenciamento/actions";
 import { Product } from "@/types/data";
 import { SquarePen } from "lucide-react";
 import Image from "next/image";
@@ -7,6 +8,8 @@ import { useState } from "react";
 
 
 export default function Editar ( {product}: { product: Product}){
+
+    const updateProductWithId = updateProduct.bind(null, product?.id)
 
     const [aberto, setAberto] = useState(false)
 
@@ -30,7 +33,7 @@ export default function Editar ( {product}: { product: Product}){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <div className="absolute md:w-150 w-85 bg-white rounded-2xl">
+                    <form className="absolute md:w-150 w-85 bg-white rounded-2xl" autoComplete="off" action={updateProductWithId}>
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <SquarePen />
                             <h1 className="font-medium">EDITAR PRODUTO</h1>
@@ -39,41 +42,49 @@ export default function Editar ( {product}: { product: Product}){
                         <div className="p-10 flex flex-col md:flex-row gap-10 text-start items-center">
                             {preview ? (
                                 <img
-                                src={preview}
-                                alt="Preview"
-                                className="w-42 h-40 object-cover rounded-2xl"
+                                    src={preview}
+                                    alt="Preview"
+                                    className="w-42 h-40 object-cover rounded-2xl"
                                 />
-                            ) : (
+                                ) : product.image ? (
+                                <Image
+                                    src={product.image}
+                                    alt="foto produto"
+                                    width={168}
+                                    height={160}
+                                    className="w-42 h-40 object-cover rounded-2xl"
+                                />
+                                ) : (
                                 <label className="cursor-pointer border border-black w-42 h-40 flex items-center justify-center text-xs rounded-2xl text-center">
-                                Escolher imagem
-                                <input
+                                    Escolher imagem
+                                    <input
                                     type="file"
                                     accept="image/*"
                                     onChange={handleImageChange}
                                     className="hidden"
                                     name="image"
-                                />
+                                    />
                                 </label>
                             )}
 
                             <div className="flex flex-col gap-3">
                                 <p>Nome do produto:</p>
-                                <input className="border-b-1 border-black w-70 outline-none" defaultValue={product.title}></input>
+                                <input className="border-b-1 border-black w-70 outline-none" defaultValue={product.title} name="title"></input>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-10 justify-center items-center w-full text-start">
                             <div className="flex flex-col gap-3">
                                     <p>Material:</p>
-                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.material}></input>
+                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.material} name="material"></input>
                             </div>
                             <div className="flex flex-col gap-3">
                                     <p>Preço:</p>
-                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.price}></input>
+                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.price} name="price"></input>
                             </div>
                             <div className="flex flex-col gap-3">
                                     <p>Descrição:</p>
-                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.description}></input>
+                                    <input className="border-b-1 border-black w-70 md:w-130 outline-none" defaultValue={product.description} name="description"></input>
                             </div>
                         </div>
 
@@ -81,11 +92,11 @@ export default function Editar ( {product}: { product: Product}){
                             <button onClick={() => setAberto(false)} className="text-white bg-anil rounded-3xl cursor-pointer px-4 py-2">
                                 Cancelar
                             </button>
-                            <button onClick={() => setAberto(false)} className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
+                            <button type="submit" className="bg-golden rounded-3xl cursor-pointer px-4 py-2">
                                 Editar
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             )}
         </div>

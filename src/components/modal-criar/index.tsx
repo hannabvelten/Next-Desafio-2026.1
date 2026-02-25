@@ -31,13 +31,13 @@ export default function Criar(){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <form autoComplete="off" className="absolute md:w-150 w-85  bg-white rounded-2xl" action={createProduct}>
+                    <form autoComplete="off" className="absolute md:w-150 w-85  bg-white rounded-2xl" action={createProduct} encType="multipart/form-data">
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <PlusIcon />
                             <h1 className="font-medium">ADICIONAR PRODUTO</h1>
                         </div>
 
-                        <div className="p-10 flex gap-10 flex-col md:flex-row items-center">
+                        <div className=" relative p-10 flex gap-10 flex-col md:flex-row items-center">
                             {preview ? (
                                 <img
                                 src={preview}
@@ -45,23 +45,24 @@ export default function Criar(){
                                 className="w-42 h-40 object-cover rounded-2xl"
                                 />
                             ) : (
-                                <label className="cursor-pointer border border-black w-42 h-40 flex items-center justify-center text-xs rounded-2xl text-center">
+                                <div className="border border-black w-42 h-40 flex items-center justify-center text-xs rounded-2xl text-center">
                                 Escolher imagem
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleImageChange}
-                                    className="hidden"
-                                    name="image"
-                                />
-                                </label>
+                                </div>
                             )}
+
+                            <input
+                                type="file"
+                                name="image"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                                className="absolute top-0 left-0 w-42 h-40 opacity-0 cursor-pointer"
+                            />
 
                             <div className="flex flex-col gap-3">
                                 <p>Nome do produto:</p>
                                 <input 
                                     className="border-b-1 border-black w-70 outline-none"
-                                    name="name">
+                                    name="title">
                                 </input>
                             </div>
                         </div>
