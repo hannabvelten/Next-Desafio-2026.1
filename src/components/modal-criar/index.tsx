@@ -20,7 +20,7 @@ export default function Criar(){
             setImage(file)
             setPreview(URL.createObjectURL(file))
         }
-}
+    }
 
     return(   
         <div>

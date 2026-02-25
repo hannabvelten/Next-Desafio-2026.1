@@ -1,6 +1,7 @@
 "use server"
 
 import prisma from "@/lib/db"
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function getTabela(){
@@ -24,7 +25,7 @@ export async function deleteProduct(id: number | undefined) {
     await prisma.product.delete({
         where: { id },
     });
-    redirect("/admin")
+    revalidatePath("/admin")
 }
 
 export async function createProduct(formData: FormData) {
@@ -46,4 +47,17 @@ export async function createProduct(formData: FormData) {
     })
 
     redirect("/admin")
+}
+
+export async function fetchProductById (id: number | undefined){
+    const product = await prisma.product.findUnique({
+        where: {id},
+        select: {
+            id: true,
+            title: true,
+            price: true,
+            description: true,
+            material: true,
+        }
+    })
 }
