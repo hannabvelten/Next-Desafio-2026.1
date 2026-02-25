@@ -26,10 +26,10 @@ export default function Visualizar({ product }: { product: Product }){
                         <div className="p-10 flex flex-col md:flex-row gap-10 items-center">
                             <Image 
                             src={product.image}
-                            alt="anel cravejado"
+                            alt="foto produto"
                             width={904}
                             height={904}
-                            className="md:h-35 w-30 md:w-auto rounded-3xl"
+                            className="md:h-35 md:w-40 w-30 object-cover rounded-3xl"
                             />
 
                             <div className="flex flex-col gap-3 text-start">
