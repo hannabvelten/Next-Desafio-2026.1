@@ -1,6 +1,7 @@
 "use server"
 
 import prisma from "@/lib/db"
+import { redirect } from "next/navigation";
 
 export async function getTabela(){
     const products = await prisma.product.findMany({
@@ -23,4 +24,26 @@ export async function deleteProduct(id: number | undefined) {
     await prisma.product.delete({
         where: { id },
     });
+    redirect("/admin")
+}
+
+export async function createProduct(formData: FormData) {
+    const title = formData.get("name") as string;
+    const price = Number(formData.get("price") as string);
+    const description = formData.get("description") as string;
+    const imageFile = formData.get("image") as File;
+    const image = imageFile?.name ?? "";
+    const material = formData.get("material") as string;
+
+    await prisma.product.create({
+        data: {
+            title,
+            price,
+            description,
+            image,
+            material,
+        }
+    })
+
+    redirect("/admin")
 }

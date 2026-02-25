@@ -29,7 +29,7 @@ export default function Tabela({ products }: TabelaProps){
                     </tr>
                 </thead>
 
-                <tr className=" border-b border-black"></tr>
+                {/* <tr className=" border-b border-black"></tr> */}
 
                 <tbody>
                     {products.map((product, index) => (
