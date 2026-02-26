@@ -1,4 +1,4 @@
-import { fetchProductById } from "@/actions/gerenciamento/actions";
+import { fetchProductById } from "@/actions/postIndividual/actions";
 import PagPIndivudual from "@/src/components/produto-individual";
 import { notFound } from "next/navigation";
 
