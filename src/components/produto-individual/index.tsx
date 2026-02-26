@@ -2,17 +2,20 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from 'lucide-react';
 import { Product } from "@/types/data";
 
-export default function PagPIndivudual ({product}: {product:Product}){
+type ProdutoProps = {
+    product: Product
+}
+
+export default function PagPIndivudual ({product}: ProdutoProps ){
     return (
         <div className="tudo flex flex-col md:flex-row w-full justify-center md:p-10">
             <div className="flex flex-col">
                 <div className="imagem py-10 md:pt-10 md:py-0 md:w-100 w-full flex justify-center items-center">
                     <Link href='/'className="">
                         <Image 
-                        src={ {product.image} || '/imagens/aliancaOuro.jpeg'}
+                        src= {product.image}
                         alt="Aliança ouro"
                         width={904}
                         height={904}

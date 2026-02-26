@@ -2,21 +2,17 @@
 
 import prisma from "@/lib/db"
 
-export default async function fetchPostById (id: number) {
+export async function fetchProductById (id: number) {
     const product = await prisma.product.findUnique({
         where: { id },
-        include: {
-            product: {
-                select: {
-                    id: true,
-                    title: true,
-                    price: true,
-                    description: true,
-                    image: true,
-                },
-            },
+        select: {
+            id: true,
+            title: true,
+            price: true,
+            description: true,
+            material: true,
+            image: true,
         },
     });
-
     return product;
 }

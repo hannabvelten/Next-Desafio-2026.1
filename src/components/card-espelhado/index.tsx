@@ -2,14 +2,19 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
+import { Product } from "@/types/data"
 
-export default function CardEspelhado () {
+type CardProps = {
+    product: Product
+}
+
+export default function CardEspelhado ({product}: CardProps) {
     return (
         <div>
             <div className="card w-full h-60 flex px-6 gap-5 pt-8 items-center md:justify-start md:flex-row-reverse">
                 <Link href='/' className="" >
                     <Image 
-                    src={'/imagens/brincoEstrela.jpeg'}
+                    src={product.image}
                     alt="Brinco argola + estrela"
                     width={904}
                     height={904}
@@ -17,12 +22,12 @@ export default function CardEspelhado () {
                     />
                 </Link>
                 <div className="conteudo flex flex-col gap-2 md:justify-end">
-                    <h1 className="text-[18px] md:text-2xl font-medium flex md:justify-end">Brinco Argola + Estrela</h1>
-                    <p className="text-[18px] md:text-2xl flex md:justify-end">R$1.290,00</p>
+                    <h1 className="text-[18px] md:text-2xl font-medium flex md:justify-end">{product.title}</h1>
+                    <p className="text-[18px] md:text-2xl flex md:justify-end">R${product.price},00</p>
                     <p className="text-[11px] md:text-xs flex md:justify-end">ou 5x de R$258,00</p>
                     <div className="w-full flex md:justify-end">
                         <Button className="bg-creme flex justify-center rounded-3xl p-1 w-24 hover:bg-amber-100 text-black font-light" variant="default">
-                            <Link href="/produtoIndividual" className="text-[14px] font-regular">VER MAIS</Link>
+                            <Link href={`/produtoIndividual/${product.id}`}  className="text-[14px] font-regular">VER MAIS</Link>
                         </Button>
                     </div>
                 </div>
