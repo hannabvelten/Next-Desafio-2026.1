@@ -2,7 +2,6 @@ import CardEspelhado from "@/src/components/card-espelhado";
 import Search from "../../../components/search";
 import Card from "@/src/components/cards";
 import Paginacao from "@/src/components/paginacao";
-import { getProdutos } from "@/actions/pagProdutos/action";
 import { fetchFilteredPosts } from "@/actions/search/actions";
 
 
@@ -19,7 +18,7 @@ export default async function PagProdutos({
     const query = searchParams?.query || ''
     const currentPage = Number(searchParams?.page) || 1
 
-    const {produtos, count} = await fetchFilteredPosts(query, currentPage)
+    const {products, count, totalPages} = await fetchFilteredPosts(query, currentPage)
 
 
     return (
@@ -29,7 +28,7 @@ export default async function PagProdutos({
             </div>
             <Search />
             <div className="md:grid md:grid-cols-2 justify-center">
-                {produtos.map((product, index) =>
+                {products.map((product, index) =>
                     index % 2 === 0 ? (
                     <CardEspelhado key={product.id} product={product} />
                     ) : (
@@ -37,7 +36,7 @@ export default async function PagProdutos({
                     )
                 )}
             </div>
-            <Paginacao />
+            <Paginacao totalPages={totalPages} />
         </div>
     )
 }
