@@ -9,6 +9,11 @@ type CardProps = {
 }
 
 export default function Card ({product}: CardProps) {
+    const installment = product.price / 8;
+    const formattedInstallment = installment.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+    });
     return (
         <div>
             <div className="card w-full h-60 flex px-6 gap-5 pt-8 items-center">
@@ -24,8 +29,8 @@ export default function Card ({product}: CardProps) {
     
                 <div className="conteudo flex flex-col gap-2">
                     <h1 className="text-[18px] md:text-2xl font-medium">{product.title}</h1>
-                    <p className="text-[18px] md:text-2xl">R${product.price},00</p>
-                    <p className="text-[11px] md:text-xs">ou 5x de R$258,00</p>
+                    <p className="text-[18px] md:text-2xl">R$ {product.price},00</p>
+                    <p className="text-[11px] md:text-xs">ou 8x de {formattedInstallment}</p>
                     <div className="w-full flex">
                         <Button className="bg-creme flex justify-center rounded-3xl p-1 w-24 hover:bg-amber-100 text-black font-light" variant="default">
                             <Link href={`/produtoIndividual/${product.id}`} className="text-[14px] font-regular">VER MAIS</Link>

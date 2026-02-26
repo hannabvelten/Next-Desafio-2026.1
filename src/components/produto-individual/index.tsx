@@ -3,12 +3,19 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Product } from "@/types/data";
+import { Gem } from "lucide-react";
 
 type ProdutoProps = {
     product: Product
 }
 
 export default function PagPIndivudual ({product}: ProdutoProps ){
+    const installment = product.price / 8;
+    const formattedInstallment = installment.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+    });
+
     return (
         <div className="tudo flex flex-col md:flex-row w-full justify-center md:p-10">
             <div className="flex flex-col">
@@ -37,10 +44,14 @@ export default function PagPIndivudual ({product}: ProdutoProps ){
                 </div>
 
                 <p className="text-xs md:text-lg">{product.description}</p>
+                <div className="flex gap-2 items-center">
+                    <Gem size={20} />
+                    <p className="text-xs md:text-lg font-medium">{product.material}</p>
+                </div>
 
                 <div className="flex flex-col gap-2 ">
-                    <p className="text-2xl md:text-3xl">{product.price}</p>
-                    <p className="text-xs">ou 12x de {product.price}</p>
+                    <p className="text-2xl md:text-3xl">R$ {product.price},00</p>
+                    <p className="text-xs">ou 8x de {formattedInstallment}</p>
                 </div>
 
                 <div className="w-full flex justify-center md:justify-start md:py-0">
