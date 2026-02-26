@@ -3,12 +3,24 @@ import Search from "../../../components/search";
 import Card from "@/src/components/cards";
 import Paginacao from "@/src/components/paginacao";
 import { getProdutos } from "@/actions/pagProdutos/action";
+import { fetchFilteredPosts } from "@/actions/search/actions";
 
 
 
-export default async function PagProdutos() {
+export default async function PagProdutos({
+    searchParams,
+}: {
+    searchParams: {
+        query?: string;
+        page?: string;
+    }
+}) {
 
-    const products = await getProdutos()
+    const query = searchParams?.query || ''
+    const currentPage = Number(searchParams?.page) || 1
+
+    const {produtos, count} = await fetchFilteredPosts(query, currentPage)
+
 
     return (
         <div className="min-h-screen">
@@ -17,7 +29,7 @@ export default async function PagProdutos() {
             </div>
             <Search />
             <div className="md:grid md:grid-cols-2 justify-center">
-                {products.map((product, index) =>
+                {produtos.map((product, index) =>
                     index % 2 === 0 ? (
                     <CardEspelhado key={product.id} product={product} />
                     ) : (
