@@ -31,7 +31,7 @@ export default function Criar(){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <form autoComplete="off" className="absolute md:w-150 w-85  bg-white rounded-2xl" action={createProduct} encType="multipart/form-data">
+                    <form autoComplete="off" className="absolute md:w-150 w-85  bg-white rounded-2xl" action={createProduct}>
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <PlusIcon />
                             <h1 className="font-medium">ADICIONAR PRODUTO</h1>

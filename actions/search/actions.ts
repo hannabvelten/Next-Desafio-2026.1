@@ -1,8 +1,8 @@
 import prisma from "@/lib/db";
 
-const itemsPerPage = 6;
+const itemsPerPage = 4;
 
-export async function fetchFilteredPosts(query: string, currentPage: number) {
+export async function fetchFilteredPosts(query: string, currentPage: number, itemsPerPage: number) {
     const offset = (currentPage - 1) * itemsPerPage
     const products = await prisma.product.findMany({
         where: {

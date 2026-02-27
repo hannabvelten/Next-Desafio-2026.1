@@ -1,4 +1,5 @@
 import { getTabela } from "@/actions/gerenciamento/actions"
+import { fetchFilteredPosts } from "@/actions/search/actions"
 import { Button } from "@/components/ui/button"
 import Criar from "@/src/components/modal-criar"
 import Paginacao from "@/src/components/paginacao"
@@ -6,8 +7,21 @@ import Tabela from "@/src/components/tabela-gerenciamento"
 import { Plus } from "lucide-react"
 
 
-export default async function Page(){
-    const products = await getTabela()
+
+export default async function Page({
+        searchParams,
+    }: {
+        searchParams:{
+            query?: string;
+            page?: string;
+        }
+    }) {
+        const query = searchParams?.query || ''
+        const currentPage = Number(searchParams?.page) || 1
+        
+        const {products, count} = await fetchFilteredPosts(query, currentPage,5)
+        const itemsPerPage = 4
+        const totalPages = Math.ceil(count / itemsPerPage)
 
     return(
         <div className="w-full">
@@ -15,7 +29,7 @@ export default async function Page(){
                 <h1 className="text-xl md:text-3xl font-semibold">Gerenciamento de produtos</h1>
                 <Criar />  
             </div>
-            <Tabela products = {products} />
+            <Tabela products = {products} totalPages={totalPages} />
         </div>
     )
 }

@@ -18,7 +18,7 @@ export default async function PagProdutos({
     const query = searchParams?.query || ''
     const currentPage = Number(searchParams?.page) || 1
 
-    const {products, count, totalPages} = await fetchFilteredPosts(query, currentPage)
+    const {products, count, totalPages} = await fetchFilteredPosts(query, currentPage, 6)
 
 
     return (

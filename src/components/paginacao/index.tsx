@@ -37,7 +37,7 @@ export default function Paginacao({totalPages}: {totalPages: number}){
                         <Link key={page} href={createPageURL(page)}>
                             <Button className={`h-8 w-8 md:h-10 md:w-10 flex justify-center items-center rounded-lg shadow-md/30 border-2 border-golden
                                     ${currentPage === page 
-                                        ? "bg-amber-100 text-black" 
+                                        ? "bg-amber-100 text-black hover:bg-amber-100" 
                                         : "bg-white text-black hover:bg-amber-100"}`}
                             >
                                 {page}

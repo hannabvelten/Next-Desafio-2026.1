@@ -10,9 +10,10 @@ import { Product } from "@/types/data";
 
 type TabelaProps = {
     products: Product[]
+    totalPages: number
 }
 
-export default function Tabela({ products }: TabelaProps){
+export default function Tabela({ products, totalPages }: TabelaProps){
 
 
     
@@ -69,8 +70,8 @@ export default function Tabela({ products }: TabelaProps){
                     <tr className=" border-black border w-200 py-3"/>
                     
                     <tr>
-                        <td colSpan={5}>
-                            <Paginacao />
+                        <td colSpan={6}>
+                            <Paginacao totalPages={totalPages}/>
                         </td>
                     </tr>
                 </tbody>
