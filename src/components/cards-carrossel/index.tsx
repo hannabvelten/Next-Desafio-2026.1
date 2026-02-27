@@ -26,8 +26,8 @@ export default function CardCarrossel({ product }: CardCarrosselProps){
                                 />
                             </div>
                         
-                        <h1 className='font-medium px-6 pb-2 pt-4'>{product.title}</h1>
-                        <p className='px-6'>R${product.price},00</p>
+                        <h1 className='font-medium px-4 pb-2 pt-4 text-sm'>{product.title}</h1>
+                        <p className='px-4'>R${product.price},00</p>
                     </CardContent>
                 </Card>
             </div>

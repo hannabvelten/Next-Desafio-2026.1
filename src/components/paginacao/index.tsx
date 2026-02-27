@@ -20,7 +20,7 @@ export default function Paginacao({totalPages}: {totalPages: number}){
 
     const pages = []
 
-    for (let i = 1; i <= totalPages; i++) {
+    for (let i = 1; i < totalPages; i++) {
         pages.push(i)
     }
 
