@@ -70,10 +70,10 @@ export default function Sidebar(){
                         </div>
                     </div>
 
-                    <div className="text-white hidden md:flex gap-3 justify-center">
+                    <Link href="/login" className="text-white hidden md:flex gap-3 justify-center">
                         <LogOut />
                         <h1 className="font-medium">Logout</h1>
-                    </div>
+                    </Link>
 
                 </div>
             </div>

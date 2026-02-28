@@ -1,8 +1,20 @@
+"use client"
+
 import { CircleUserIcon, Lock, Mail, ArrowLeftFromLine, House } from "lucide-react";
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
+
+
 export default function InputsLogin (){
+    const router = useRouter()
+    
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        router.push("/admin")
+    }
     return(
+
         <div className="z-10 flex w-full justify-center items-center">
             <div className="flex flex-col items-center w-85 md:w-200 gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-20 rounded-4xl justify-center">
 
@@ -16,22 +28,22 @@ export default function InputsLogin (){
                     <p className="text-[9px] md:text-[15px] text-center px-4">Acesse sua conta e retome sua experiência com nossas coleções exclusivas.</p>
                 </div>
 
-                <form className="flex flex-col gap-7 w-full justify-center items-center">
+                <form className="flex flex-col gap-7 w-full justify-center items-center" onSubmit={handleSubmit}>
                     
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px] border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <CircleUserIcon className="w-3 h-3 opacity-50" />
-                        <input className="w-full outline-none" placeholder="Nome"></input>
+                        <input className="w-full outline-none" required placeholder="Nome"></input>
                     </div>
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px]  border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <Mail className="w-3 h-3 opacity-50" />
-                        <input className="w-full outline-none" placeholder="Email"></input>
+                        <input className="w-full outline-none" type="email" required placeholder="Email"></input>
                     </div>
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px] border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <Lock className="w-3 h-3 opacity-50"/>
-                        <input className="w-full outline-none" placeholder="Senha"></input>
+                        <input className="w-full outline-none" type="password" required placeholder="Senha"></input>
                     </div>
                     
-                    <Link href='/admin' className="bg-azulEscuro w-30 text-xs md:text-xl p-2 text-center rounded-4xl text-white">Login</Link>
+                    <button href='/admin' type="submit" className="bg-azulEscuro w-30 text-xs md:text-xl p-2 text-center rounded-4xl text-white">Login</button>
 
                 </form>
 
