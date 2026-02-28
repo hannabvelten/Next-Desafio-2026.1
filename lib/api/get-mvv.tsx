@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 export type ApiProps = {
     id: number;
     title: string;
@@ -11,6 +13,7 @@ type ApiResponse = {
 
 export async function getIdentities() : Promise<ApiProps[]> {
     const res = await fetch("https://treinamentoapi.codejr.com.br/api/identities");
+    {cache: "no-store"}
 
     if(!res.ok){
         throw new Error(`Erro ao fetch data, status: ${res.status}`);

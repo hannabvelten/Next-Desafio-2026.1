@@ -4,7 +4,7 @@ export default async function GetMvv(){
     try{
         const data = await getIdentities();
         return (
-            <div className="p-2">
+            <div className="p-2 bg-brancoGelo">
                 <ul className="flex flex-col gap-10 p-7 md:flex-row md:p-15 md:px-30 md:gap-20">
                     {data.map((item) => (
                     <li key={item.id} className="flex gap-7 md:flex-col justify-center items-center">

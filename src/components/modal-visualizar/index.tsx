@@ -17,7 +17,7 @@ export default function Visualizar({ product }: { product: Product }){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <div className="absolute w-85 md:w-150 md:h-90 bg-white rounded-2xl">
+                    <div className="absolute w-85 md:w-150 bg-white rounded-2xl">
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <Eye />
                             <h1 className="font-medium">VISUALIZAR PRODUTO</h1>
@@ -29,12 +29,13 @@ export default function Visualizar({ product }: { product: Product }){
                             alt="foto produto"
                             width={904}
                             height={904}
-                            className="md:h-35 md:w-40 w-30 object-cover rounded-3xl"
+                            className="w-30 md:w-40 md:h-40 object-cover rounded-3xl"
                             />
 
                             <div className="flex flex-col gap-3 text-start">
                                 <p className="font-semibold">{product.title}</p>
                                 <p className="text-xs font-light">{product.description} </p>
+                                <p className="text-xs font-medium">{product.material} </p>
                                 <p className="font-medium">R${product.price},00</p>
                             </div>
                         </div>
