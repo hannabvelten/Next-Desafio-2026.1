@@ -3,6 +3,8 @@ import { Montserrat, Antic_Didone } from "next/font/google";
 import "./globals.css";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+import { CartProvider } from "@/src/context/cardContext"; // 
+
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   style: "normal",
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${montserrat.className} ${anticdidone.variable} antialiased`} >
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

@@ -55,7 +55,7 @@ export default function Tabela({ products, totalPages }: TabelaProps){
                         </td>
                         <td className="p-2">{product.title}</td>
                         <td className="p-2">{product.material}</td>
-                        <td className="p-2">R${product.price},00</td>
+                        <td className="p-2">R$ {product.price},00</td>
                         <td className="max-w-[50px] truncate p-2">{product.description}</td>
                         <td className="p-2">
                             <div className="flex justify-center gap-3">
