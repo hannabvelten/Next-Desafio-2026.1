@@ -38,12 +38,12 @@ export default function ItensCarrinho (){
                         />
                     </Link>
 
-                    <div className="py-2 md:flex md:flex-col md:justify-center md:h-40 md:w-40">
+                    <div className="py-2 md:flex md:flex-col gap-2 md:justify-center md:h-40 md:w-40">
                         <p className="md:text-xl font-medium">{product.title}</p>
                         <p className="md:text-sm text-xs">{product.material}</p>
                         <div className="flex md:hidden items-center gap-1">
                             <X className="text-red-700 md:flex" size={17}/>
-                            <Button className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 md:flex">Remover</Button>
+                            <Button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 md:flex">Remover</Button>
                         </div>
                     </div>
                 </div>
@@ -54,15 +54,10 @@ export default function ItensCarrinho (){
 
                 <div className="flex items-center gap-1">
                     <X className="text-red-700 hidden md:flex" size={17}/>
-                    <Button onClick={removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 sm:hidden md:flex">Remover</Button>
+                    <Button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 sm:hidden md:flex">Remover</Button>
                 </div>
             </div>
             ))}
-            
-            
-
-
-
         </div>
     )
 }

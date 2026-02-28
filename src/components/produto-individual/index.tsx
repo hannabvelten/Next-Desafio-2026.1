@@ -1,15 +1,22 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Product } from "@/types/data";
 import { Gem } from "lucide-react";
+import { useCart } from "@/src/context/cardContext";
+import { useRouter } from "next/navigation";
 
 type ProdutoProps = {
     product: Product
 }
 
 export default function PagPIndivudual ({product}: ProdutoProps ){
+    const router = useRouter();
+    const { addToCart } = useCart();
+
     const installment = product.price / 8;
     const formattedInstallment = installment.toLocaleString("pt-BR", {
         style: "currency",
@@ -32,7 +39,10 @@ export default function PagPIndivudual ({product}: ProdutoProps ){
                 </div>
 
                 <div className="carrinho w-full md:flex justify-center pt-7 sm:hidden">
-                    <Button className="bg-golden text-black w-100 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
+                    <Button onClick={() => {
+                        addToCart(product); 
+                        router.push("/carrinho");
+                    }}  className="bg-golden text-black w-100 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
                 </div>
             </div>
 
@@ -60,7 +70,12 @@ export default function PagPIndivudual ({product}: ProdutoProps ){
             </div>
 
             <div className="carrinho w-full flex justify-center pt-7 md:hidden">
-                <Button className="bg-golden text-black w-80 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
+                <Button 
+                    onClick={() => {
+                        addToCart(product); 
+                        router.push("/carrinho");
+                    }} 
+                    className="bg-golden text-black w-80 rounded-4xl hover:bg-amarelinho">ADICIONAR AO CARRINHO</Button>
             </div>
         </div>
     )
