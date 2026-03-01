@@ -17,7 +17,7 @@ export default function CardCarrossel({ product }: CardCarrosselProps){
                 <Card className='w-50 h-70 p-0 md:w-60 md:h-80 overflow-hidden'>
                     <CardContent className="p-0 w-full overflow-hidden">
                         
-                            <div className='relative w-full h-58'>
+                            <div className='relative w-full h-45 md:h-58'>
                                 <Image
                                 src={product.image || '/imagens/colarSol.jpg'}
                                 alt="foto anel cravejado"
