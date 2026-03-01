@@ -1,6 +1,15 @@
+'use client'
+
+import { useCart } from "@/src/context/cardContext";
 import { Button } from "@/components/ui/button"
 
 export default function Pedido() {
+
+    const { cart } = useCart();
+    const subtotal = cart.reduce((total, product) => {
+        return total + product.price;
+    }, 0);
+
     return(
         <div className="px-4 py-7">
             <div className="px-2 py-2 w-full md:w-110 border-1 border-golden rounded-3xl flex flex-col gap-3">
@@ -14,7 +23,7 @@ export default function Pedido() {
                 <div className="flex flex-col gap-8 px-2 text-xs">
                     <div className="subtotal flex justify-between">
                         <p>Subtotal</p>
-                        <p>R$1.640,00</p>
+                        <p>R$ {subtotal},00</p>
                     </div>
                     <div className="descontos flex justify-between">
                         <p>Descontos</p>
@@ -22,7 +31,7 @@ export default function Pedido() {
                     </div>
                     <div className="frete flex justify-between">
                         <p>Frete</p>
-                        <p>R$50,00</p>
+                        <p>R$ 00,00</p>
                     </div>
                 </div>
 
@@ -32,7 +41,7 @@ export default function Pedido() {
 
                 <div className="total flex justify-between p-2 text-sm">
                     <p>Total</p>
-                    <p>R$1.690,00</p>
+                    <p>R${subtotal},00</p>
                 </div>
 
                 <div className="w-full flex justify-center py-5 md:py-3 items-center">
