@@ -43,7 +43,7 @@ export default function ItensCarrinho (){
                         <p className="md:text-sm text-xs">{product.material}</p>
                         <div className="flex md:hidden items-center gap-1">
                             <X className="text-red-700 md:flex" size={17}/>
-                            <Button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 md:flex">Remover</Button>
+                            <button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] hover:bg-transparent md:text-sm font-light p-0 md:flex">Remover</button>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ export default function ItensCarrinho (){
 
                 <div className="flex items-center gap-1">
                     <X className="text-red-700 hidden md:flex" size={17}/>
-                    <Button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] md:text-sm font-light p-0 sm:hidden md:flex">Remover</Button>
+                    <button onClick={() => removeFromCart(product.id)} className="bg-transparent text-red-700 text-[11px] hover:bg-transparent md:text-sm font-light p-0 sm:hidden md:flex">Remover</button>
                 </div>
             </div>
             ))}

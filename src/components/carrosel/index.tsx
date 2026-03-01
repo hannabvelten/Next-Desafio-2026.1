@@ -31,7 +31,7 @@ export default function Carrossel({products}: CarrosselProps) {
 
       <button onClick={scrollPrev} className="absolute left-4 top-1/2 z-10"><ChevronLeft /></button>
 
-      <div className="viewport overflow-hidden py-9 " ref={emblaRef}>
+      <div className="viewport overflow-hidden py-9 w-360 left-60 items-center flex justify-center" ref={emblaRef}>
 
         <div className="container flex gap-10 mx-auto">
           {products.map((product, index) => (
