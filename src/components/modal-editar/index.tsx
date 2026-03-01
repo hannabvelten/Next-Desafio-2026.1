@@ -33,7 +33,7 @@ export default function Editar ( {product}: { product: Product}){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <form className="absolute md:w-150 w-85 bg-white rounded-2xl" autoComplete="off" action={updateProductWithId} encType="multipart/form-data">
+                    <form className="absolute md:w-150 w-85 bg-white rounded-2xl" autoComplete="off" action={updateProductWithId} >
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <SquarePen />
                             <h1 className="font-medium">EDITAR PRODUTO</h1>
@@ -49,7 +49,7 @@ export default function Editar ( {product}: { product: Product}){
                                 />
                                 ) : (
                                 <Image
-                                    src={product.image}
+                                    src={`${product.image}?v=${Date.now()}`}
                                     alt="foto produto"
                                     width={168}
                                     height={160}

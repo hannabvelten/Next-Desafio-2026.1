@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { writeFile } from "fs/promises"
+import path from "path";
 
 export async function getTabela(){
     const products = await prisma.product.findMany({
@@ -87,16 +88,33 @@ export async function updateProduct (id: number | undefined , formData: FormData
     const material = formData.get("material") as string
     const image = formData.get("image") as File
 
+    let dataToUpdate: any = {
+        title,
+        price,
+        description,
+        material,
+        }
+
+        if (image && image.size > 0) {
+
+        const bytes = await image.arrayBuffer()
+        const buffer = Buffer.from(bytes)
+
+        const fileName = crypto.randomUUID() + "-" + image.name
+        const filePath = path.join(process.cwd(), "public/imagens", fileName)
+
+        await writeFile(filePath, buffer)
+
+        dataToUpdate.image = `/imagens/${fileName}`
+        }
+
+
     await prisma.product.update({
-        where: { id },
-        data: {
-            title,
-            price,
-            description,
-            material,
-            
-        },
+        where: { id: Number(id) },
+        data: dataToUpdate,
     });
+    
+    revalidatePath("/admin")
     redirect("/admin")
 
 }
