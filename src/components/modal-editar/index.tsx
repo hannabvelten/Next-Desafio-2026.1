@@ -33,20 +33,21 @@ export default function Editar ( {product}: { product: Product}){
 
             {aberto && (
                 <div className="fixed inset-0  bg-black/50 flex items-center justify-center">
-                    <form className="absolute md:w-150 w-85 bg-white rounded-2xl" autoComplete="off" action={updateProductWithId}>
+                    <form className="absolute md:w-150 w-85 bg-white rounded-2xl" autoComplete="off" action={updateProductWithId} encType="multipart/form-data">
                         <div className="w-full flex flex-col h-20 gap-2 rounded-2xl justify-center items-center text-xl bg-azulEscuro text-white">
                             <SquarePen />
                             <h1 className="font-medium">EDITAR PRODUTO</h1>
                         </div>
 
                         <div className="p-10 flex flex-col md:flex-row gap-10 text-start items-center">
-                            {preview ? (
+                            <label className="cursor-pointer">
+                                {preview ? (
                                 <img
                                     src={preview}
                                     alt="Preview"
                                     className="w-42 h-40 object-cover rounded-2xl"
                                 />
-                                ) : product.image ? (
+                                ) : (
                                 <Image
                                     src={product.image}
                                     alt="foto produto"
@@ -54,18 +55,18 @@ export default function Editar ( {product}: { product: Product}){
                                     height={160}
                                     className="w-42 h-40 object-cover rounded-2xl"
                                 />
-                                ) : (
-                                <label className="cursor-pointer border border-black w-42 h-40 flex items-center justify-center text-xs rounded-2xl text-center">
-                                    Escolher imagem
-                                    <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleImageChange}
-                                    className="hidden"
-                                    name="image"
-                                    />
-                                </label>
-                            )}
+                                )}
+
+                                <input
+                                type="file"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                                name="image"
+                                className="hidden"
+                                />
+                            </label>
+
+                            
 
                             <div className="flex flex-col gap-3">
                                 <p>Nome do produto:</p>
