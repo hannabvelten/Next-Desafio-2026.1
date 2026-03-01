@@ -21,6 +21,9 @@ const anticdidone = Antic_Didone ({
 export const metadata: Metadata = {
   title: "Clair Acessórios",
   description: "Uma loja de joias elegantes em prata 925 e ouro 18k!",
+  icons: {
+    icon: "/imagens/favicon.png",
+  },
 };
 
 export default function RootLayout({
