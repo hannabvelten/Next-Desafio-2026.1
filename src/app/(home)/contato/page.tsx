@@ -10,7 +10,7 @@ export default function Contato() {
                 <p className="text-center text-xs md:text-sm">Tem alguma dúvida, sugestão ou precisa de ajuda com seu pedido? Estamos aqui para te atender com carinho e atenção!</p>
             </div>
 
-            <div className=" flex md:flex-row sm:flex-col justify-center md:gap-30">
+            <div className=" flex lg:flex-row sm:flex-col justify-center lg:gap-30">
                 <div className="flex flex-col gap-10 pb-10">
                     <Contatos />
                     <Mapa />

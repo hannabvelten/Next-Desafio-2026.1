@@ -40,8 +40,8 @@ export default function Formulario() {
     }
 
     return(
-        <div className="p-4">
-            <div className="bg-creme w-full md:w-110 rounded-3xl flex flex-col justify-center p-4 gap-6">
+        <div className="p-4 flex justify-center">
+            <div className="bg-creme w-full md:w-110 md:h-120 rounded-3xl flex flex-col justify-center p-4 gap-6">
                 <h1 className="text-center text-xl">Fale com a gente:</h1>
                 <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
                     <div>

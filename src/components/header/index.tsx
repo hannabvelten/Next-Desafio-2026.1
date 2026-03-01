@@ -16,10 +16,10 @@ export default function Header(){
     return (
         <header className="bg-[#0F1C53] sticky top-0 z-20 w-ful px-6 md:px-15 flex flex-col md:flex-row md:items-center">
             <div className="flex">
-                <button className="icone text-white text-2xl md:hidden text-start" onClick={() => setIsNavOpen(!isNavOpen)}>
+                <button className="icone text-white text-2xl lg:hidden text-start" onClick={() => setIsNavOpen(!isNavOpen)}>
                     <i className="bi bi-list"></i>
                 </button>
-                <div className="flex flex-1 justify-center md:justify-start ">
+                <div className="flex flex-1 justify-center lg:justify-start ">
                     <Link href='/'>
                         <Image 
                         src={'/imagens/logo.png'}
@@ -33,7 +33,7 @@ export default function Header(){
             </div>
 
             {isNavOpen ? (
-                <div className="md:hidden flex flex-col gap-4 bg-[#0F1C53] text-white px-1 py-4">
+                <div className="lg:hidden flex md:flex-row md:text-xs flex-col gap-4 bg-[#0F1C53] text-white px-1 py-4">
                     <Link href="/">Home</Link>
                     <Link href="/pagProdutos">Produtos</Link>
                     <Link href="/contato">Contato</Link>
@@ -43,7 +43,7 @@ export default function Header(){
                 </div>
             ) : null}
 
-            <div className="hidden md:flex flex-1 gap-14 w-full h-full text-[#FFFFFF] font-medium items-center md:justify-end">
+            <div className="hidden lg:flex flex-1 gap-14 w-full h-full text-[#FFFFFF] font-medium items-center md:justify-end">
                 <Link href="/" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Home</Link>
                 <Link href="/pagProdutos" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Produtos</Link>
                 <Link href="/contato" className="hover:border-white hover:border-1 hover:shadow-md rounded-full px-2 py-1 transition-colors duration-300">Contato</Link>
