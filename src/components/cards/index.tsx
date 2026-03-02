@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Product } from "@/types/data"
+import { Gem } from "lucide-react"
 
 type CardProps = {
     product: Product
@@ -29,6 +30,10 @@ export default function Card ({product}: CardProps) {
     
                 <div className="conteudo flex flex-col gap-2">
                     <h1 className="text-[17px] lg:text-2xl font-medium">{product.title}</h1>
+                    <div className="flex items-center gap-2">
+                        <Gem size={15}/>
+                        <p className="text-xs md:text-[10px] lg:text-sm font-medium flex md:justify-end">{product.material}</p>
+                    </div>
                     <p className="text-[18px] lg:text-2xl">R$ {product.price},00</p>
                     <p className="text-[11px] lg:text-xs">ou 8x de {formattedInstallment}</p>
                     <div className="w-full flex">
