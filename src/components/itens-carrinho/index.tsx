@@ -11,8 +11,8 @@ export default function ItensCarrinho (){
     const { cart, removeFromCart } = useCart();
 
     return(
-        <div className="p-4 flex flex-col gap-5">
-            <div className="w-full flex pt-3 md:py-2">
+        <div className="p-4 flex flex-col gap-5 items-center">
+            <div className="w-full flex pt-3 md:py-2 md:px-12 lg:px-0">
                 <Link href="/pagProdutos" className="bg-amarelinho flex text-sm font-medium rounded-full items-center gap-2 px-2 py-2 transition-colors duration-300">
                     <Plus size={16}/>
                     Adicionar mais itens

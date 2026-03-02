@@ -15,7 +15,7 @@ export default function InputsLogin (){
     }
     return(
 
-        <div className="z-10 flex w-full justify-center items-center">
+        <div className="z-10 flex w-full justify-center items-center md:px-10">
             <div className="flex flex-col items-center w-85 md:w-200 gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-20 rounded-4xl justify-center">
 
                 <Link href="/" className="flex w-full justify-start px-18">
@@ -24,7 +24,7 @@ export default function InputsLogin (){
                 </Link>
 
                 <div className="flex flex-col items-center w-full gap-8">
-                    <h1 className="text-center font-anticdidone text-azulEscuro text-3xl md:text-7xl">Bem-vindo de volta!</h1>
+                    <h1 className="text-center font-anticdidone text-azulEscuro text-3xl md:text-5xl lg:text-7xl">Bem-vindo de volta!</h1>
                     <p className="text-[9px] md:text-[15px] text-center px-4">Acesse sua conta e retome sua experiência com nossas coleções exclusivas.</p>
                 </div>
 

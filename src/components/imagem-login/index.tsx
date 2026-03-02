@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function ImagemLogin (){
     return (
         <div>
-            <div className="md:hidden flex w-full min-h-[100vh] bg-blue-200">
+            <div className="lg:hidden flex w-full min-h-[100vh] bg-blue-200">
                 <Link href='/'>
                     <Image
                     src={'/imagens/colarManequim.jpeg'}
@@ -16,7 +16,7 @@ export default function ImagemLogin (){
                 <div className="absolute inset-0 z-10 bg-white/40"></div>
             </div>
 
-            <div className="hidden md:flex md:w-123">
+            <div className="hidden lg:flex lg:w-123">
                 <Link href='/'>
                     <Image
                     src={'/imagens/colarManequim.jpeg'}

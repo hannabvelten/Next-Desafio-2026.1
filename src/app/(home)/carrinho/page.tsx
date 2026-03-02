@@ -9,10 +9,10 @@ export default function Carrinho(){
             </div>
 
             <div className="w-full flex sm:justify-center h-2 md:justify-start md:px-47">
-                <div className="linha w-83 md:w-200 h-px bg-black"></div>
+                <div className="linha w-83 md:w-230 h-px bg-black"></div>
             </div>
 
-            <div className="flex flex-col md:flex-row md:justify-center">
+            <div className="flex flex-col lg:flex-row md:justify-center">
                 <ItensCarrinho />
                 <Pedido />
             </div>

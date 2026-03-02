@@ -1,9 +1,15 @@
+'use client'
+
 import { CircleUserIcon, Lock, Mail, ArrowLeftFromLine, House } from "lucide-react";
 import Link from "next/link";
 
 export default function InputsCadastro (){
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        router.push("/admin")
+    }
     return(
-        <div className="z-10 flex w-full justify-center items-center">
+        <div className="z-10 flex w-full justify-center items-center md:px-10">
             <div className="flex flex-col items-center w-85 md:w-200 gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-10 rounded-4xl justify-center">
 
                 <Link href="/" className="flex w-full justify-start px-18">
@@ -16,7 +22,7 @@ export default function InputsCadastro (){
                     <p className="text-[9px] md:text-[15px] text-center px-4">Cadastre-se para acessar nossas coleções e receber novidades feitas para brilhar com você.</p>
                 </div>
 
-                <form className="flex flex-col gap-7 w-full justify-center items-center">
+                <form className="flex flex-col gap-7 w-full justify-center items-center" onSubmit={handleSubmit}>
                     
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px] border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <CircleUserIcon className="w-3 h-3 opacity-50" />
@@ -24,18 +30,18 @@ export default function InputsCadastro (){
                     </div>
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px]  border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <Mail className="w-3 h-3 opacity-50" />
-                        <input className="w-full outline-none" placeholder="Email"></input>
+                        <input className="w-full outline-none" type="email" placeholder="Email"></input>
                     </div>
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px] border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <Lock className="w-3 h-3 opacity-50"/>
-                        <input className="w-full outline-none" placeholder="Senha"></input>
+                        <input className="w-full outline-none" type="password" placeholder="Senha"></input>
                     </div>
                     <div className="flex md:w-120 items-center gap-2 text-xs md:text-[15px] border-1 border-golden rounded-4xl px-3 py-1 md:py-2 shadow-md/20">
                         <Lock className="w-3 h-3 opacity-50"/>
-                        <input className="w-full outline-none" placeholder="Confirmar senha"></input>
+                        <input className="w-full outline-none" type="password" placeholder="Confirmar senha"></input>
                     </div>
                     
-                    <Link href='/gerenciamento' className="bg-azulEscuro w-40 text-center text-xs md:text-xl p-2 rounded-4xl text-white">Cadastre-se</Link>
+                    <button href='/admin' type="submit" className="bg-azulEscuro w-35 text-xs lg:text-xl p-2 text-center rounded-4xl text-white">Cadastre-se</button>
 
                 </form>
 

@@ -11,8 +11,8 @@ export default function Pedido() {
     }, 0);
 
     return(
-        <div className="px-4 py-7">
-            <div className="px-2 py-2 w-full md:w-110 border-1 border-golden rounded-3xl flex flex-col gap-3">
+        <div className="px-4 py-7 flex justify-center">
+            <div className="px-2 py-2 w-full md:w-110 lg:h-100 border-1 border-golden rounded-3xl flex flex-col gap-3">
                 <div>
                     <h1 className="text-xl font-medium py-3 px-2">Meu Pedido</h1>
                 </div>
