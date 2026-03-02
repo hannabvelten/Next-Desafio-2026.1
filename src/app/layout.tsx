@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${montserrat.className} ${anticdidone.variable} antialiased`} >
+      <body className={`${montserrat.className} ${anticdidone.variable} antialiased bg-brancoGelo`}>
         <CartProvider>
           {children}
         </CartProvider>

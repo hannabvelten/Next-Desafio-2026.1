@@ -8,7 +8,7 @@ export default async function Home() {
   const products = await getCarrossel()
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-brancoGelo">
       <HeroSection />
       <Carrossel products={products} />
       <Box_SobreNos />
