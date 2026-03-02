@@ -8,15 +8,18 @@ import { fetchFilteredPosts } from "@/actions/search/actions";
 
 export default async function PagProdutos({
     searchParams,
-}: {
-    searchParams: {
-        query?: string;
-        page?: string;
-    }
-}) {
+    }: {
+    searchParams: Promise<{
+        query?: string
+        page?: string
+    }>
+    }) {
 
-    const query = searchParams?.query || ''
-    const currentPage = Number(searchParams?.page) || 1
+    
+    const params = await searchParams
+
+    const query = params?.query || ''
+    const currentPage = Number(params?.page) || 1
 
     const {products, count, totalPages} = await fetchFilteredPosts(query, currentPage, 6)
 
