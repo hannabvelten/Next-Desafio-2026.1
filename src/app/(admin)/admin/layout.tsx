@@ -1,14 +1,21 @@
+import Footer from "@/src/components/footer";
 import Sidebar from "@/src/components/sidebar";
 
 export default function AdminLayout({
     children,
-}: Readonly<{
+    }: {
     children: React.ReactNode;
-}>) {
-    return(
-        <section className=" md:min-h-screen md:flex">
-            <Sidebar />
+    }) {
+    return (
+        <div className="min-h-screen flex">
+        <Sidebar />
+
+        <div className="flex flex-col flex-1">
+            <main className="flex-1">
             {children}
-        </section>
-    )
+            </main>
+            <Footer />
+        </div>
+        </div>
+    );
 }

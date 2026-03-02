@@ -17,8 +17,8 @@ export default function Sidebar(){
     const toggleAdminSidebar = () => setIsAdminSidebarOpen(!isAdminSidebarOpen)
 
     return (
-            <div className="md:w-65 md:min-h-screen">
-                <div className="bg-azulEscurao w-full md:min-h-screen">
+            <div className="w-65 min-h-screen bg-azulEscurao">
+                
                     <div className="flex">
                         <button className="icone text-white text-2xl md:hidden text-start px-3" onClick={toggleAdminSidebar}>
                             <i className="bi bi-list"></i>
@@ -70,12 +70,11 @@ export default function Sidebar(){
                         </div>
                     </div>
 
-                    <Link href="/login" className="text-white hidden md:flex gap-3 justify-center">
+                    <Link href="" className="text-white hidden md:flex gap-3 justify-center">
                         <LogOut />
                         <h1 className="font-medium">Logout</h1>
                     </Link>
 
-                </div>
             </div>
     )
 }
