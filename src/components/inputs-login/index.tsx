@@ -18,7 +18,7 @@ export default function InputsLogin (){
         <div className="z-10 flex w-full justify-center items-center md:px-10 lg:px-0">
             <div className="flex flex-col items-center w-85 md:w-200 lg:w-full gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-20 rounded-4xl justify-center">
 
-                <Link href="/" className="flex w-full justify-start px-18">
+                <Link href="/" className="flex w-full justify-start px-7 md:px-18">
                     <ArrowLeftFromLine />
                     <House />
                 </Link>
@@ -48,8 +48,8 @@ export default function InputsLogin (){
                 </form>
 
                 <div className="flex gap-2">
-                    <p>Não tem uma conta?</p>
-                    <Link href='/cadastre-se' className="text-golden font-medium">Cadastre-se</Link>
+                    <p className="text-xs md:text-sm">Não tem uma conta?</p>
+                    <Link href='/cadastre-se' className="text-golden text-xs md:text-sm font-medium">Cadastre-se</Link>
                 </div>
 
             </div>

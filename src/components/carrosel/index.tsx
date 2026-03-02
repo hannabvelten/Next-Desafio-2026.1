@@ -29,7 +29,7 @@ export default function Carrossel({products}: CarrosselProps) {
         <h2>JOIAS EM DESTAQUE</h2>
       </div>
 
-      <button onClick={scrollPrev} className="absolute left-4 top-1/2 z-10"><ChevronLeft /></button>
+      <button onClick={scrollPrev} className="hidden lg:flex absolute left-4 top-1/2 z-10"><ChevronLeft /></button>
 
       <div className="viewport overflow-hidden py-9 " ref={emblaRef}>
 
@@ -40,7 +40,7 @@ export default function Carrossel({products}: CarrosselProps) {
         </div>
       </div>
 
-    <button onClick={scrollNext} className='absolute right-4 top-1/2 z-10'><ChevronRight /></button>
+    <button onClick={scrollNext} className='hidden lg:flex absolute right-4 top-1/2 z-10'><ChevronRight /></button>
 
     </div>
   )
