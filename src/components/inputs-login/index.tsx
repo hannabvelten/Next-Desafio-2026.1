@@ -15,8 +15,8 @@ export default function InputsLogin (){
     }
     return(
 
-        <div className="z-10 flex w-full justify-center items-center md:px-10">
-            <div className="flex flex-col items-center w-85 md:w-200 gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-20 rounded-4xl justify-center">
+        <div className="z-10 flex w-full justify-center items-center md:px-10 lg:px-0">
+            <div className="flex flex-col items-center w-85 md:w-200 lg:w-full gap-7 md:gap-14 bg-white/60 backdrop-blur-sm py-20 rounded-4xl justify-center">
 
                 <Link href="/" className="flex w-full justify-start px-18">
                     <ArrowLeftFromLine />
